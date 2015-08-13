@@ -1,7 +1,7 @@
 
 /***********************************************************
 //    chiconCube_v0_1a.ino
-//    version 0.1a - 07/08/2015
+//    version 0.1a - 12/08/2015
 //    Author : Vincent ANTOINE
 //    
 //    MAIN FILE of CHICON HDW Management
@@ -197,14 +197,15 @@ void checkServiceTimer(){
   byte i=0;
     for(i=0;i<nbrConfigService;i++){
         if((millis() - myServices[i].lastCheck > myServices[i].frequency) ){
-          myServices[i].lastCheck = millis();
           #if defined(WITH_SERIAL)
           Serial.print(F("@Srv ID "));
           Serial.println(myServices[i].id);
           #endif
-          executeServiceOverWifi(magicNumber,myServices[i].id);
-          processServerResponse();
-          
+          if(executeServiceOverWifi(magicNumber,myServices[i].id)){
+            myServices[i].lastCheck = millis();
+            processServerResponse();
+            
+          }
         }
     }
   

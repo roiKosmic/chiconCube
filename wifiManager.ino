@@ -41,7 +41,6 @@ void createClientRequest(String query){
   client.print("GET "+WEBSERVICE_URL);
   client.print(query);
   client.print(HTTP_REQUEST);
-  checkServerResponse();
   
 }
 
@@ -52,6 +51,7 @@ boolean configRequestOverWifi(String mn){
         socketTimer = millis();  
         String q= "?mn="+mn+"&cfg";
         createClientRequest(q);
+        return checkServerResponse();
      }
    }
  }
@@ -65,7 +65,7 @@ boolean selectLEDOverWifi(String mn, unsigned short id){
         socketTimer = millis(); 
        String q= "?mn="+mn+"&led="+String(id);
         createClientRequest(q);
-        return true;
+        return checkServerResponse();;
     } 
    }
   }
@@ -80,7 +80,7 @@ boolean executeServiceOverWifi(String mn,unsigned long id){
     socketTimer = millis();
     String q ="?mn="+mn+"&srv="+String(id);
     createClientRequest(q);
-    return true;
+    return checkServerResponse();
   } 
  }
  }

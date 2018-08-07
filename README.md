@@ -6,7 +6,7 @@ You need some external libraries to run this code :
 * shiftPWDM available at https://github.com/elcojacobs/ShiftPWM
 * WifiLibrary available in official arduino IDE
 
-You also need a chic'on server account at http://www.chicon.fr/ or run your own chic'on server source code on ChiconServer Repository
+You also need a chic'on server account at http://www.chicon.fr/ (deprecated - please run you own chicon server) or run your own chic'on server source code on ChiconServer Repository
 
 ##Instructions
 Follow this instructable to build your own chicon Cube
@@ -24,7 +24,7 @@ static const char ssid[] = ""; //ssid
 static const char pass[] = ""; //WPA password
 
 * Chic'on Server configuration
-Leave unchange if you are using the online www.chicon.fr. If you run your own Chic'on sever update accordingly. Make sure your server name is resolvable.
+Leave unchange if you are using the online www.chicon.fr (deprecated please use your own chic'on server) If you run your own Chic'on sever update accordingly. Make sure your server name is resolvable.
 
 char server[] = "www.chicon.fr";
 static const String WEBSERVICE_URL = "/chicon/webServices/hdwWS.php";

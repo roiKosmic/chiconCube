@@ -10,6 +10,7 @@ You also need a chic'on server account at http://www.chicon.fr/ (deprecated - pl
 
 ##Instructions
 Follow this instructable to build your own chicon Cube
+https://www.instructables.com/id/Smart-Lamp-Chicon-Cube/
 
 ##Configuration
 All configuration variables are in the config.h file. Please update accordingly
